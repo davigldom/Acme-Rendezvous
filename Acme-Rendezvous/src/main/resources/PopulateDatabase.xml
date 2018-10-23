@@ -1,0 +1,1483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- * PopulateDatabase.xml * * Copyright (C) 2017 Universidad de Sevilla 
+	* * The use of this project is hereby constrained to the conditions of the 
+	* TDG Licence, a copy of which you may download from * http://www.tdg-seville.info/License.html -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+
+	<!-- Admin -->
+
+	<bean id="userAccountAdmin1" class="security.UserAccount">
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="admin1" class="domain.Administrator">
+		<property name="name" value="Joaquín" />
+		<property name="surname" value="Ruiz" />
+		<property name="postalAddress" value="41530" />
+		<property name="phone" value="+34623027583" />
+		<property name="email" value="joaquin@acme.com" />
+		<property name="birthdate" value="25/05/1997" />
+		<property name="userAccount" ref="userAccountAdmin1" />
+	</bean>
+
+	<!-- User 1 -->
+
+	<bean id="userAccountUser1" class="security.UserAccount">
+		<property name="username" value="user1" />
+		<property name="password" value="24c9e15e52afc47c225b757e7bee1f9d" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user1" class="domain.User">
+		<property name="name" value="Pedro" />
+		<property name="surname" value="Márquez" />
+		<property name="postalAddress" value="Madrid" />
+		<property name="phone" value="+34623027583" />
+		<property name="email" value="pedro@acme.com" />
+		<property name="birthdate" value="2001/09/11" />
+		<property name="userAccount" ref="userAccountUser1" />
+		<property name="rendezvouses">
+			<list>
+				<ref bean="rendezvous1" />
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+				<ref bean="answer1" />
+				<ref bean="answer2" />
+				<ref bean="answer3" />
+				<ref bean="answer4" />
+				<ref bean="answer5" />
+				<ref bean="answer6" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- User 2 -->
+
+	<bean id="userAccountUser2" class="security.UserAccount">
+		<property name="username" value="user2" />
+		<property name="password" value="7e58d63b60197ceb55a1c487989a3720" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user2" class="domain.User">
+		<property name="name" value="Isabel" />
+		<property name="surname" value="Alonso" />
+		<property name="postalAddress" value="Barcelona" />
+		<property name="phone" value="+34726031849" />
+		<property name="email" value="isabel@acme.com" />
+		<property name="birthdate" value="1967/02/08" />
+		<property name="userAccount" ref="userAccountUser2" />
+		<property name="rendezvouses">
+			<list>
+				<ref bean="rendezvous2" />
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+				<ref bean="answer7" />
+				<ref bean="answer8" />
+				<ref bean="answer9" />
+				<ref bean="answer10" />
+				<ref bean="answer11" />
+				<ref bean="answer12" />
+				<ref bean="answer19" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- User 3 -->
+
+	<bean id="userAccountUser3" class="security.UserAccount">
+		<property name="username" value="user3" />
+		<property name="password" value="92877af70a45fd6a2ed7fe81e1236b78" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user3" class="domain.User">
+		<property name="name" value="Jordi" />
+		<property name="surname" value="Guardiola" />
+		<property name="postalAddress" value="Tarragona" />
+		<!-- <property name="phone" value="+34621174285" /> -->
+		<property name="email" value="jordi@acme.com" />
+		<property name="birthdate" value="1969/02/27" />
+		<property name="rendezvouses">
+			<list>
+				<ref bean="rendezvous3" />
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+				<ref bean="answer13" />
+				<ref bean="answer14" />
+				<ref bean="answer15" />
+				<ref bean="answer20" />
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccountUser3" />
+	</bean>
+
+	<!-- User 4 -->
+
+	<bean id="userAccountUser4" class="security.UserAccount">
+		<property name="username" value="user4" />
+		<property name="password" value="3f02ebe3d7929b091e3d8ccfde2f3bc6" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user4" class="domain.User">
+		<property name="name" value="Felipe" />
+		<property name="surname" value="Ruiz" />
+		<!-- <property name="postalAddress" value="Alcalá de Henares" /> -->
+		<property name="phone" value="+34633285554" />
+		<property name="email" value="felipe@acme.com" />
+		<property name="birthdate" value="2003/04/16" />
+		<property name="userAccount" ref="userAccountUser4" />
+		<property name="rendezvouses">
+			<list>
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<!-- User 5 -->
+
+	<bean id="userAccountUser5" class="security.UserAccount">
+		<property name="username" value="user5" />
+		<property name="password" value="0a791842f52a0acfbb3a783378c066b8" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user5" class="domain.User">
+		<property name="name" value="Paola" />
+		<property name="surname" value="García" />
+		<property name="postalAddress" value="Camas" />
+		<property name="phone" value="+34777293129" />
+		<property name="email" value="paola@acme.com" />
+		<property name="birthdate" value="1995/01/06" />
+		<property name="userAccount" ref="userAccountUser5" />
+		<property name="rendezvouses">
+			<list>
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+				<ref bean="answer21" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- User 6 -->
+
+	<bean id="userAccountUser6" class="security.UserAccount">
+		<property name="username" value="user6" />
+		<property name="password" value="affec3b64cf90492377a8114c86fc093" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user6" class="domain.User">
+		<property name="name" value="Ana" />
+		<property name="surname" value="Guerra" />
+		<property name="postalAddress" value="Madrid" />
+		<property name="phone" value="+34627184732" />
+		<property name="email" value="ana@acme.com" />
+		<property name="birthdate" value="1953/10/29" />
+		<property name="userAccount" ref="userAccountUser6" />
+		<property name="rendezvouses">
+			<list>
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+				<ref bean="answer22" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- User 7 -->
+
+	<bean id="userAccountUser7" class="security.UserAccount">
+		<property name="username" value="user7" />
+		<property name="password" value="3e0469fb134991f8f75a2760e409c6ed" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user7" class="domain.User">
+		<property name="name" value="Manuel" />
+		<property name="surname" value="Rodríguez" />
+		<!-- <property name="postalAddress" value="Sevilla" /> -->
+		<!-- <property name="phone" value="+34642288343" /> -->
+		<property name="email" value="manuel@acme.com" />
+		<property name="birthdate" value="2005/07/27" />
+		<property name="rendezvouses">
+			<list>
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+				<ref bean="answer25" />
+				<ref bean="answer26" />
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccountUser7" />
+	</bean>
+
+	<!-- User 8 -->
+
+	<bean id="userAccountUser8" class="security.UserAccount">
+		<property name="username" value="user8" />
+		<property name="password" value="7668f673d5669995175ef91b5d171945" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user8" class="domain.User">
+		<property name="name" value="Javier" />
+		<property name="surname" value="Nuñez" />
+		<property name="postalAddress" value="Barcelona" />
+		<!-- <property name="phone" value="+34642288343" /> -->
+		<property name="email" value="javier@acme.com" />
+		<property name="birthdate" value="1985/12/09" />
+		<property name="rendezvouses">
+			<list>
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+				<ref bean="answer16" />
+				<ref bean="answer17" />
+				<ref bean="answer18" />
+				<ref bean="answer23" />
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccountUser8" />
+	</bean>
+
+	<!-- User 9 -->
+
+	<bean id="userAccountUser9" class="security.UserAccount">
+		<property name="username" value="user9" />
+		<property name="password" value="8808a13b854c2563da1a5f6cb2130868" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user9" class="domain.User">
+		<property name="name" value="Cristina" />
+		<property name="surname" value="Álvarez" />
+		<property name="postalAddress" value="Madrid" />
+		<property name="phone" value="+34729084719" />
+		<property name="email" value="cristina@acme.com" />
+		<property name="birthdate" value="1981/08/19" />
+		<property name="rendezvouses">
+			<list>
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+				<ref bean="answer24" />
+				<ref bean="answer27" />
+				<ref bean="answer28" />
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccountUser9" />
+	</bean>
+
+	<!-- User 10 -->
+
+	<bean id="userAccountUser10" class="security.UserAccount">
+		<property name="username" value="user10" />
+		<property name="password" value="990d67a9f94696b1abe2dccf06900322" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user10" class="domain.User">
+		<property name="name" value="Antonio" />
+		<property name="surname" value="Rios" />
+		<property name="postalAddress" value="Sevilla" />
+		<property name="phone" value="+34629572228" />
+		<property name="email" value="antonio@acme.com" />
+		<property name="birthdate" value="2001/02/21" />
+		<property name="rendezvouses">
+			<list>
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+				<ref bean="answer29" />
+				<ref bean="answer30" />
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccountUser10" />
+	</bean>
+	
+		<!-- User 11 -->
+
+	<bean id="userAccountUser11" class="security.UserAccount">
+		<property name="username" value="user11" />
+		<property name="password" value="03aa1a0b0375b0461c1b8f35b234e67a" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="USER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="user11" class="domain.User">
+		<property name="name" value="José Miguel" />
+		<property name="surname" value="Daoiz" />
+		<property name="postalAddress" value="Cádiz" />
+		<property name="phone" value="+34629572212" />
+		<property name="email" value="daoiz@acme.com" />
+		<property name="birthdate" value="1993/02/21" />
+		<property name="rendezvouses">
+			<list>
+			</list>
+		</property>
+		<property name="answers">
+			<list>
+			</list>
+		</property>
+		<property name="userAccount" ref="userAccountUser11" />
+	</bean>
+	
+		<!-- Manager 1 -->
+
+	<bean id="userAccountManager1" class="security.UserAccount">
+		<property name="username" value="manager1" />
+		<property name="password" value="c240642ddef994358c96da82c0361a58" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="manager1" class="domain.Manager">
+		<property name="name" value="Jim" />
+		<property name="surname" value="Moriarty" />
+		<property name="postalAddress" value="London" />
+		<property name="email" value="professor_moriarty@acme.com" />
+		<property name="birthdate" value="1993/01/12" />
+		<property name="userAccount" ref="userAccountManager1" />
+		<property name="vat" value="ES23452126R" />
+		<property name="services">
+			<list>
+				<ref bean="acmeService1" />
+				<ref bean="acmeService2" />
+				<ref bean="acmeService4" />
+			</list>
+		</property>
+	</bean>
+	
+			<!-- Manager 2 -->
+
+	<bean id="userAccountManager2" class="security.UserAccount">
+		<property name="username" value="manager2" />
+		<property name="password" value="8df5127cd164b5bc2d2b78410a7eea0c" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="manager2" class="domain.Manager">
+		<property name="name" value="John" />
+		<property name="surname" value="Doe" />
+		<property name="phone" value="+34664537261" />
+		<property name="email" value="johndoe@acme.com" />
+		<property name="birthdate" value="1990/12/11" />
+		<property name="userAccount" ref="userAccountManager2" />
+		<property name="vat" value="ES23452346R" />
+		<property name="services">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+			<!-- Manager 3 -->
+
+	<bean id="userAccountManager3" class="security.UserAccount">
+		<property name="username" value="manager3" />
+		<property name="password" value="2d3a5db4a2a9717b43698520a8de57d0" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="MANAGER" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="manager3" class="domain.Manager">
+		<property name="name" value="Fernando" />
+		<property name="surname" value="De Rojas" />
+		<property name="postalAddress" value="41530" />
+		<property name="email" value="rojasfernando@acme.com" />
+		<property name="birthdate" value="1992/01/12" />
+		<property name="userAccount" ref="userAccountManager3" />
+		<property name="vat" value="ES12345678R" />
+		<property name="services">
+			<list>
+				<ref bean="acmeService3" />
+			</list>
+		</property>
+	</bean>
+
+
+	<!-- Locations -->
+
+	<bean id="location1" class="domain.Location">
+		<property name="latitude" value="402825.0" />
+		<property name="longitude" value="033440.0" />
+	</bean>
+
+	<bean id="location2" class="domain.Location">
+		<property name="latitude" value="412320.0" />
+		<property name="longitude" value="020932.0" />
+	</bean>
+
+	<bean id="location3" class="domain.Location">
+		<property name="latitude" value="410700.0" />
+		<property name="longitude" value="011500.0" />
+	</bean>
+
+	<bean id="location4" class="domain.Location">
+		<property name="latitude" value="372238.0" />
+		<property name="longitude" value="055913.0" />
+	</bean>
+
+	<bean id="location5" class="domain.Location">
+		<property name="latitude" value="392518.0" />
+		<property name="longitude" value="043025.0" />
+	</bean>
+
+	<bean id="location6" class="domain.Location">
+		<property name="latitude" value="40.416646" />
+		<property name="longitude" value="-3.703818" />
+	</bean>
+	
+	<bean id="location7" class="domain.Location">
+		<property name="latitude" value="37.358211" />
+		<property name="longitude" value="-5.987039" />
+	</bean>
+	
+	<bean id="location8" class="domain.Location">
+		<property name="latitude" value="36.500876" />
+		<property name="longitude" value="-6.268434" />
+	</bean>
+
+
+	<!-- Rendezvous 1 -->
+
+	<bean id="rendezvous1" class="domain.Rendezvous">
+		<property name="name" value="Encuentro Plaza Cataluña" />
+		<property name="description"
+			value="Encuentro en el centro de Barcelona para tocar el piano" />
+		<property name="moment" value="01/02/2019 12:00" />
+		<property name="picture"
+			value="https://www.101viajes.com/sites/default/files/plaza-catalunya.jpg" />
+		<property name="coordinates" ref="location2" />
+		<property name="draft" value="true" />
+		<property name="deleted" value="false" />
+		<property name="adultOnly" value="false" />
+		<property name="creator" ref="user1" />
+		<property name="attendants">
+			<list>
+				<ref bean="user1" />
+				<ref bean="user2" />
+				<ref bean="user4" />
+			</list>
+		</property>
+		<property name="announcements">
+			<list>
+				<ref bean="announcement1" />
+				<ref bean="announcement2" />
+				<ref bean="announcement3" />
+			</list>
+		</property>
+		<property name="linked">
+			<list>
+				<ref bean="rendezvous4" />
+			</list>
+		</property>
+		<property name="questions">
+			<list>
+				<ref bean="question1" />
+				<ref bean="question2" />
+				<ref bean="question3" />
+				<ref bean="question4" />
+				<ref bean="question5" />
+				<ref bean="question6" />
+			</list>
+		</property>
+		<property name="requests">
+			<list>
+				<ref bean="request1" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Rendezvous 2 -->
+
+	<bean id="rendezvous2" class="domain.Rendezvous">
+		<property name="name" value="Carrera solidaria" />
+		<property name="description"
+			value="Carrera de 8km solidaria por el centro de Madrid" />
+		<property name="moment" value="22/09/2018 14:30" />
+		<property name="picture"
+			value="http://www.vamosacorrer.com/imagenes/2016/11/04/carrera-emprendedores-2016-madrid-descripcion.jpg" />
+		<property name="coordinates" ref="location1" />
+		<property name="draft" value="true" />
+		<property name="deleted" value="false" />
+		<property name="adultOnly" value="true" />
+		<property name="creator" ref="user2" />
+		<property name="attendants">
+			<list>
+				<ref bean="user3" />
+				<ref bean="user8" />
+			</list>
+		</property>
+		<property name="announcements">
+			<list>
+				<ref bean="announcement4" />
+				<ref bean="announcement5" />
+			</list>
+		</property>
+		<property name="linked">
+			<list>
+			</list>
+		</property>
+		<property name="questions">
+			<list>
+				<ref bean="question7" />
+				<ref bean="question8" />
+				<ref bean="question9" />
+			</list>
+		</property>
+		<property name="requests">
+			<list>
+				<ref bean="request2" />
+				<ref bean="request3" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- Rendezvous 3 -->
+
+	<bean id="rendezvous3" class="domain.Rendezvous">
+		<property name="name" value="Manifestación Sevilla" />
+		<property name="description" value="Manifestación en la Plaza Nueva" />
+		<property name="moment" value="25/05/2020 11:00" />
+		<!-- <property name="picture" value="https://www.101viajes.com/sites/default/files/plaza-catalunya.jpg" 
+			/> -->
+		<property name="coordinates" ref="location3" />
+		<property name="draft" value="true" />
+		<property name="deleted" value="false" />
+		<property name="creator" ref="user3" />
+		<property name="adultOnly" value="true" />
+		<property name="attendants">
+			<list>
+				<ref bean="user2" />
+				<ref bean="user3" />
+				<ref bean="user5" />
+				<ref bean="user6" />
+				<ref bean="user8" />
+				<ref bean="user9" />
+			</list>
+		</property>
+		<property name="announcements">
+			<list>
+			</list>
+		</property>
+		<property name="linked">
+			<list>
+			</list>
+		</property>
+		<property name="questions">
+			<list>
+				<ref bean="question10" />
+			</list>
+		</property>
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Rendezvous 4 -->
+
+	<bean id="rendezvous4" class="domain.Rendezvous">
+		<property name="name" value="Encuentro Puerta del Sol" />
+		<property name="description"
+			value="Encuentro en puerta del sol para ir a ver la tienda Apple" />
+		<property name="moment" value="06/02/2019 12:00" />
+		<property name="picture"
+			value="http://www.viviendomadrid.com/wp-content/uploads/2014/10/puerta-del-sol.jpg" />
+		<property name="coordinates" ref="location6" />
+		<property name="draft" value="false" />
+		<property name="deleted" value="false" />
+		<property name="adultOnly" value="false" />
+		<property name="creator" ref="user1" />
+		<property name="attendants">
+			<list>
+			</list>
+		</property>
+		<property name="announcements">
+			<list>
+			</list>
+		</property>
+		<property name="linked">
+			<list>
+				<ref bean="rendezvous1" />
+			</list>
+		</property>
+		<property name="questions">
+			<list>
+			</list>
+		</property>
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+		
+
+	<!-- Rendezvous 5 -->
+
+	<bean id="rendezvous5" class="domain.Rendezvous">
+		<property name="name" value="Encuentro Kilometro 0" />
+		<property name="description" value="Encuentro en el kilometro 0 para ver Madrid" />
+		<property name="moment" value="06/08/2019 12:00" />
+		<property name="picture"
+			value="https://lh3.googleusercontent.com/-Z_S1bZTo7u4/T4YyJwwVnXI/AAAAAAAAOOQ/zdG9NC5aPvE/s640/IMG_0171.JPG" />
+		<property name="coordinates" ref="location6" />
+		<property name="draft" value="false" />
+		<property name="deleted" value="true" />
+		<property name="adultOnly" value="false" />
+		<property name="creator" ref="user1" />
+		<property name="attendants">
+			<list>
+				<ref bean="user1" />
+			</list>
+		</property>
+		<property name="announcements">
+			<list>
+			</list>
+		</property>
+		<property name="linked">
+			<list>
+			</list>
+		</property>
+		<property name="questions">
+			<list>
+			</list>
+		</property>
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Rendezvous 6 -->
+
+	<bean id="rendezvous6" class="domain.Rendezvous">
+		<property name="name" value="Encuentro ETSII" />
+		<property name="description" value="Encuentro para visitar la ETSII en Sevilla" />
+		<property name="moment" value="08/06/2019 10:00" />
+		<property name="picture"
+			value="https://upload.wikimedia.org/wikipedia/commons/a/af/ETSII_Sevilla_003.jpg" />
+		<property name="coordinates" ref="location7" />
+		<property name="draft" value="false" />
+		<property name="deleted" value="false" />
+		<property name="adultOnly" value="false" />
+		<property name="creator" ref="user7" />
+		<property name="attendants">
+			<list>
+				<ref bean="user7" />
+				<ref bean="user9" />
+				<ref bean="user10" />
+			</list>
+		</property>
+		<property name="announcements">
+			<list>
+			</list>
+		</property>
+		<property name="linked">
+			<list>
+			</list>
+		</property>
+		<property name="questions">
+			<list>
+				<ref bean="question11" />
+				<ref bean="question12" />
+			</list>
+		</property>
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Rendezvous 7 -->
+
+	<bean id="rendezvous7" class="domain.Rendezvous">
+		<property name="name" value="Encuentro en la playa de Rota" />
+		<property name="description"
+			value="Encuentro en la playa de la Costilla en Rota, Cádiz" />
+		<property name="moment" value="10/07/2019 12:00" />
+		<property name="coordinates" ref="location8" />
+		<property name="draft" value="false" />
+		<property name="deleted" value="false" />
+		<property name="adultOnly" value="false" />
+		<property name="creator" ref="user1" />
+		<property name="attendants">
+			<list>
+			</list>
+		</property>
+		<property name="announcements">
+			<list>
+			</list>
+		</property>
+		<property name="linked">
+			<list>
+			</list>
+		</property>
+		<property name="questions">
+			<list>
+			</list>
+		</property>
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+
+	<!-- Comments -->
+
+	<bean id="comment1" class="domain.Comment">
+		<property name="text" value="Comentario 1" />
+		<property name="moment" value="15/09/2016 13:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous1" />
+		<property name="user" ref="user1" />
+		<property name="replies">
+			<list>
+				<ref bean="comment9" />
+				<ref bean="comment10" />
+				<ref bean="comment11" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment2" class="domain.Comment">
+		<property name="text" value="Comentario 2" />
+		<property name="moment" value="20/07/2016 10:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous1" />
+		<property name="user" ref="user2" />
+		<property name="replies">
+			<list>
+				<ref bean="comment8" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment3" class="domain.Comment">
+		<property name="text" value="Comentario 3" />
+		<property name="moment" value="20/07/2016 10:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous2" />
+		<property name="user" ref="user4" />
+		<property name="replies">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment4" class="domain.Comment">
+		<property name="text" value="Comentario 4" />
+		<property name="moment" value="20/07/2016 10:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous2" />
+		<property name="user" ref="user5" />
+		<property name="replies">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment5" class="domain.Comment">
+		<property name="text" value="Comentario 5" />
+		<property name="moment" value="20/07/2016 10:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous2" />
+		<property name="user" ref="user5" />
+		<property name="replies">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment6" class="domain.Comment">
+		<property name="text" value="Comentario 6" />
+		<property name="moment" value="20/07/2016 10:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous3" />
+		<property name="user" ref="user7" />
+		<property name="replies">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment7" class="domain.Comment">
+		<property name="text" value="Comentario 7" />
+		<property name="moment" value="15/09/2016 13:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous3" />
+		<property name="user" ref="user7" />
+		<property name="replies">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment8" class="domain.Comment">
+		<property name="text" value="Comentario 8" />
+		<property name="moment" value="15/09/2016 13:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous1" />
+		<property name="user" ref="user8" />
+		<property name="replies">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment9" class="domain.Comment">
+		<property name="text" value="Comentario 9" />
+		<property name="moment" value="15/09/2016 13:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous1" />
+		<property name="user" ref="user9" />
+		<property name="replies">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment10" class="domain.Comment">
+		<property name="text" value="Comentario 10" />
+		<property name="moment" value="15/09/2016 13:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous1" />
+		<property name="user" ref="user10" />
+		<property name="replies">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="comment11" class="domain.Comment">
+		<property name="text" value="Comentario 11" />
+		<property name="moment" value="15/09/2016 13:18" />
+		<property name="picture" value="" />
+		<property name="rendezvous" ref="rendezvous1" />
+		<property name="user" ref="user7" />
+		<property name="replies">
+			<list>
+			</list>
+		</property>
+	</bean>
+
+
+
+	<!-- Announcements -->
+
+	<bean id="announcement1" class="domain.Announcement">
+		<property name="title" value="Announcement 1" />
+		<property name="description" value="Description of announcement 1" />
+		<property name="moment" value="15/01/2015 12:00" />
+		<property name="rendezvous" ref="rendezvous1" />
+		<property name="user" ref="user1" />
+	</bean>
+
+	<bean id="announcement2" class="domain.Announcement">
+		<property name="title" value="Announcement 2" />
+		<property name="description" value="Description of announcement 2" />
+		<property name="moment" value="19/01/2015 13:25" />
+		<property name="rendezvous" ref="rendezvous1" />
+		<property name="user" ref="user1" />
+	</bean>
+
+	<bean id="announcement3" class="domain.Announcement">
+		<property name="title" value="Announcement 3" />
+		<property name="description" value="Description of announcement 3" />
+		<property name="moment" value="30/01/2015 19:48" />
+		<property name="rendezvous" ref="rendezvous1" />
+		<property name="user" ref="user1" />
+	</bean>
+
+	<bean id="announcement4" class="domain.Announcement">
+		<property name="title" value="Announcement 4" />
+		<property name="description" value="Description of announcement 4" />
+		<property name="moment" value="19/05/2015 12:15" />
+		<property name="rendezvous" ref="rendezvous2" />
+		<property name="user" ref="user2" />
+	</bean>
+
+	<bean id="announcement5" class="domain.Announcement">
+		<property name="title" value="Announcement 5" />
+		<property name="description" value="Description of announcement 5" />
+		<property name="moment" value="20/03/2015 18:00" />
+		<property name="rendezvous" ref="rendezvous2" />
+		<property name="user" ref="user2" />
+	</bean>
+
+
+	<!-- Answers -->
+
+	<bean id="answer1" class="domain.Answer">
+		<property name="response" value="No, vivo en Tarragona" />
+		<property name="question" ref="question1" />
+	</bean>
+
+	<bean id="answer2" class="domain.Answer">
+		<property name="response" value="Sí, hasta el Grado Medio de Música" />
+		<property name="question" ref="question2" />
+	</bean>
+
+	<bean id="answer3" class="domain.Answer">
+		<property name="response" value="Sí, el piano" />
+		<property name="question" ref="question3" />
+	</bean>
+	
+	<bean id="answer4" class="domain.Answer">
+		<property name="response" value="A Yuja Wang entre otros" />
+		<property name="question" ref="question4" />
+	</bean>
+	
+	<bean id="answer5" class="domain.Answer">
+		<property name="response" value="Me gustaría que primero los profesionales hicieran una demostración y luego enseñaran a los demás" />
+		<property name="question" ref="question5" />
+	</bean>
+	
+	<bean id="answer6" class="domain.Answer">
+		<property name="response" value="Mi estilo musical favorito es el jazz" />
+		<property name="question" ref="question6" />
+	</bean>
+	
+	<bean id="answer7" class="domain.Answer">
+		<property name="response" value="Sí" />
+		<property name="question" ref="question1" />
+	</bean>
+	
+	<bean id="answer8" class="domain.Answer">
+		<property name="response" value="No, solo en el colegio" />
+		<property name="question" ref="question2" />
+	</bean>
+	
+	<bean id="answer9" class="domain.Answer">
+		<property name="response" value="No, ninguno" />
+		<property name="question" ref="question3" />
+	</bean>
+	
+	<bean id="answer10" class="domain.Answer">
+		<property name="response" value="No conozco a ninguno" />
+		<property name="question" ref="question4" />
+	</bean>
+	
+	<bean id="answer11" class="domain.Answer">
+		<property name="response" value="La verdad es que no le doy mucha importancia, voy por simple curiosidad" />
+		<property name="question" ref="question5" />
+	</bean>
+	
+	<bean id="answer12" class="domain.Answer">
+		<property name="response" value="Prefiero el pop español" />
+		<property name="question" ref="question6" />
+	</bean>
+	
+	<bean id="answer13" class="domain.Answer">
+		<property name="response" value="Sí, es muy importante para evitar lesiones y poder correr cómodamente" />
+		<property name="question" ref="question7" />
+	</bean>
+	
+	<bean id="answer14" class="domain.Answer">
+		<property name="response" value="No, es mi primera vez" />
+		<property name="question" ref="question8" />
+	</bean>
+	
+	<bean id="answer15" class="domain.Answer">
+		<property name="response" value="Sí, pero no suelo participar en muchos" />
+		<property name="question" ref="question9" />
+	</bean>
+	
+	<bean id="answer16" class="domain.Answer">
+		<property name="response" value="No, también hay mucho equipamiento barato que es de buena calidad" />
+		<property name="question" ref="question7" />
+	</bean>
+	
+	<bean id="answer17" class="domain.Answer">
+		<property name="response" value="Sí, bastantes veces" />
+		<property name="question" ref="question8" />
+	</bean>
+	
+	<bean id="answer18" class="domain.Answer">
+		<property name="response" value="Sí, hay que ayudar a los más desfavorecidos con cualquier mínimo detalle" />
+		<property name="question" ref="question9" />
+	</bean>
+	
+	<bean id="answer19" class="domain.Answer">
+		<property name="response" value="Sí, hay que asegurar la calidad de la enseñanza en nuestra ciudad" />
+		<property name="question" ref="question10" />
+	</bean>
+	
+	<bean id="answer20" class="domain.Answer">
+		<property name="response" value="Sí, pero creo que sería más útil recoger firmas" />
+		<property name="question" ref="question10" />
+	</bean>
+	
+	<bean id="answer21" class="domain.Answer">
+		<property name="response" value="Sí, hay que asegurarle un buen futuro en los estudios de nuestros hijos" />
+		<property name="question" ref="question10" />
+	</bean>
+	
+	<bean id="answer22" class="domain.Answer">
+		<property name="response" value="Sí, me parece perfecto una manifestación para ello" />
+		<property name="question" ref="question10" />
+	</bean>
+	
+	<bean id="answer23" class="domain.Answer">
+		<property name="response" value="Sí, pero deberíamos permitir que vinieran también menores de edad" />
+		<property name="question" ref="question10" />
+	</bean>
+	
+	<bean id="answer24" class="domain.Answer">
+		<property name="response" value="No, lo veo poco ambicioso" />
+		<property name="question" ref="question10" />
+	</bean>
+	
+	<bean id="answer25" class="domain.Answer">
+		<property name="response" value="Sí, específicamente Ingeniería del Software" />
+		<property name="question" ref="question11" />
+	</bean>
+	
+	<bean id="answer26" class="domain.Answer">
+		<property name="response" value="Sí, ya que la informática está presente en cualquier ámbito de la vida" />
+		<property name="question" ref="question12" />
+	</bean>
+	
+	<bean id="answer27" class="domain.Answer">
+		<property name="response" value="Sí, me hubiera gustado mucho haber hecho esta carrera" />
+		<property name="question" ref="question11" />
+	</bean>
+	
+	<bean id="answer28" class="domain.Answer">
+		<property name="response" value="Sí, aunque creo que se depende demasiado de ella" />
+		<property name="question" ref="question12" />
+	</bean>
+	
+	<bean id="answer29" class="domain.Answer">
+		<property name="response" value="No, me atrae más la carrera de Matemáticas" />
+		<property name="question" ref="question11" />
+	</bean>
+	
+	<bean id="answer30" class="domain.Answer">
+		<property name="response" value="Sí, gracias a ella la vida es mucho más fácil" />
+		<property name="question" ref="question12" />
+	</bean>
+
+
+	<!-- Questions -->
+
+	<bean id="question1" class="domain.Question">
+		<property name="statement" value="¿Vives en Barcelona?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer1" />
+				<ref bean="answer7" />
+			</list>
+		</property>
+		<property name="creator" ref="user1" />
+		<property name="rendezvous" ref="rendezvous1" />
+	</bean>
+	
+	<bean id="question2" class="domain.Question">
+		<property name="statement" value="¿Has estudiado música?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer2" />
+				<ref bean="answer8" />
+			</list>
+		</property>
+		<property name="creator" ref="user1" />
+		<property name="rendezvous" ref="rendezvous1" />
+	</bean>
+	
+	<bean id="question3" class="domain.Question">
+		<property name="statement" value="¿Sabes tocar algún instrumento? ¿Cuál?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer3" />
+				<ref bean="answer9" />
+			</list>
+		</property>
+		<property name="creator" ref="user1" />
+		<property name="rendezvous" ref="rendezvous1" />
+	</bean>
+	
+	<bean id="question4" class="domain.Question">
+		<property name="statement" value="¿Conoces a algún pianista famoso?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer4" />
+				<ref bean="answer10" />
+			</list>
+		</property>
+		<property name="creator" ref="user1" />
+		<property name="rendezvous" ref="rendezvous1" />
+	</bean>
+	
+	<bean id="question5" class="domain.Question">
+		<property name="statement" value="¿Cómo te gustaría que se desarrollara el evento?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer5" />
+				<ref bean="answer11" />
+			</list>
+		</property>
+		<property name="creator" ref="user1" />
+		<property name="rendezvous" ref="rendezvous1" />
+	</bean>
+	
+	<bean id="question6" class="domain.Question">
+		<property name="statement" value="¿Qué estilo musical prefieres?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer6" />
+				<ref bean="answer12" />
+			</list>
+		</property>
+		<property name="creator" ref="user1" />
+		<property name="rendezvous" ref="rendezvous1" />
+	</bean>
+	
+	<bean id="question7" class="domain.Question">
+		<property name="statement" value="¿Crees que es importante el uso de unas zapatillas de correr que sean caras?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer13" />
+				<ref bean="answer16" />
+			</list>
+		</property>
+		<property name="creator" ref="user2" />
+		<property name="rendezvous" ref="rendezvous2" />
+	</bean>
+	
+	<bean id="question8" class="domain.Question">
+		<property name="statement" value="¿Has participado en anteriores carreras en Madrid?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer14" />
+				<ref bean="answer17" />
+			</list>
+		</property>
+		<property name="creator" ref="user2" />
+		<property name="rendezvous" ref="rendezvous2" />
+	</bean>
+	
+	<bean id="question9" class="domain.Question">
+		<property name="statement" value="¿Crees que importante participar en eventos solidarios como este?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer15" />
+				<ref bean="answer18" />
+			</list>
+		</property>
+		<property name="creator" ref="user2" />
+		<property name="rendezvous" ref="rendezvous2" />
+	</bean>
+	
+	<bean id="question10" class="domain.Question">
+		<property name="statement" value="¿Estás de acuerdo con el motivo de la manifestación?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer19" />
+				<ref bean="answer20" />
+				<ref bean="answer21" />
+				<ref bean="answer22" />
+				<ref bean="answer23" />
+				<ref bean="answer24" />
+			</list>
+		</property>
+		<property name="creator" ref="user3" />
+		<property name="rendezvous" ref="rendezvous3" />
+	</bean>
+	
+	<bean id="question11" class="domain.Question">
+		<property name="statement" value="¿Te interesaría estudiar Ingeniería Informática?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer25" />
+				<ref bean="answer27" />
+				<ref bean="answer29" />
+			</list>
+		</property>
+		<property name="creator" ref="user7" />
+		<property name="rendezvous" ref="rendezvous6" />
+	</bean>
+	
+	<bean id="question12" class="domain.Question">
+		<property name="statement" value="¿Crees que la informática es importante hoy en día?" />
+		<property name="answers">
+			<list>
+				<ref bean="answer26" />
+				<ref bean="answer28" />
+				<ref bean="answer30" />
+			</list>
+		</property>
+		<property name="creator" ref="user7" />
+		<property name="rendezvous" ref="rendezvous6" />
+	</bean>
+
+	<!-- AcmeService -->
+	<bean id="acmeService1" class="domain.AcmeService">
+		<property name="name" value="Disabled people service" />
+		<property name="description" value="You can have access to this service if you have 
+		any special need" />
+		<property name="picture" value="https://www.chollotinta.com/images/R32445_1298_0_etiqueta_sealizadora_apli_839_.jpg" />
+		<property name="cancelled" value="false" />
+		<property name="price" value="50.0" />
+		<property name="requests">
+			<list>
+				<ref bean="request3" />
+			</list>
+		</property>
+		<property name="category" ref="category2" />
+		
+	</bean>
+	
+	<bean id="acmeService2" class="domain.AcmeService">
+		<property name="name" value="Buffet" />
+		<property name="description" value="You can request this service if you want 
+		to offer food" />
+		<property name="picture" value="" />
+		<property name="cancelled" value="true" />
+		<property name="price" value="40.0" />
+		<property name="requests">
+			<list>
+				<ref bean="request1" />
+			</list>
+		</property>
+		<property name="category" ref="category3" />
+	</bean>
+	
+	<bean id="acmeService3" class="domain.AcmeService">
+		<property name="name" value="Children care" />
+		<property name="description" value="We take care of your children while you enjoy" />
+		<property name="picture" value="" />
+		<property name="cancelled" value="false" />
+		<property name="price" value="35.0" />
+		<property name="requests">
+			<list>
+				<ref bean="request2" />
+			</list>
+		</property>
+		<property name="category" ref="category1" />
+	</bean>
+	
+	<bean id="acmeService4" class="domain.AcmeService">
+		<property name="name" value="Music by DJ" />
+		<property name="description" value="The best music" />
+		<property name="picture" value="" />
+		<property name="cancelled" value="false" />
+		<property name="price" value="100.0" />
+		<property name="requests">
+			<list>
+			</list>
+		</property>
+		<property name="category" ref="category1" />
+	</bean>
+	
+	<!-- Request -->
+	
+	<bean id="request1" class="domain.Request">
+		<property name="comments" value="I'd like to have a buffet in my rendezvous" />
+		<property name="creditCardNumber" value="4556 5463 9091 9688" />
+		<property name="expirationMonth" value="03" />
+		<property name="expirationYear" value="2020" />
+		<property name="securityNumber" value="150" />
+		<property name="service" ref="acmeService2" />
+	</bean>
+	
+	<bean id="request2" class="domain.Request">
+		<property name="comments" value="I need my children to be taken care of" />
+		<property name="creditCardNumber" value="4556 5463 9091 9688" />
+		<property name="expirationMonth" value="05" />
+		<property name="expirationYear" value="2022" />
+		<property name="securityNumber" value="749" />
+		<property name="service" ref="acmeService3" />
+	</bean>
+	
+	<bean id="request3" class="domain.Request">
+		<property name="comments" value="I'm a disabled person and I'd like to have accessibility 
+		in the rendezvous" />
+		<property name="creditCardNumber" value="4556 5463 9091 9688" />
+		<property name="expirationMonth" value="08" />
+		<property name="expirationYear" value="2021" />
+		<property name="securityNumber" value="592" />
+		<property name="service" ref="acmeService1" />
+	</bean>
+	
+	<!-- Category -->
+	<bean id="category0" class="domain.Category">
+		<property name="name" value="Default"/>
+		<property name="description" value="Default category" />
+		<property name="services">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<bean id="category1" class="domain.Category">
+		<property name="name" value="Accessibility"/>
+		<property name="description" value="You can find accessibility services here" />
+		<property name="services">
+			<list>
+				<ref bean="acmeService3" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="category2" class="domain.Category">
+		<property name="name" value="Disabled people"/>
+		<property name="description" value="Services for disabled people" />
+		<property name="services">
+			<list>
+				<ref bean="acmeService1" />
+			</list>
+		</property>
+		<property name="parent" ref="category1"/>
+	</bean>
+	
+	<bean id="category3" class="domain.Category">
+		<property name="name" value="Food and drink"/>
+		<property name="description" value="Services that offer food and drink for your rendezvouses" />
+		<property name="services">
+			<list>
+				<ref bean="acmeService2" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="category4" class="domain.Category">
+		<property name="name" value="Photographer"/>
+		<property name="description" value="Services that have a/some photographer/s to take photos in your rendezvouses" />
+		<property name="services">
+			<list>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- SystemConfig -->
+
+	<bean id="systemConfig" class="domain.SystemConfig">
+		<property name="businessName" value="Adventure meetups" />
+		<property name="banner"
+			value="https://tinyurl.com/adventure-meetup" />
+		<!-- Configurar dependiendo de idioma -->
+		<property name="welcomeMessage"
+			value="Your place to organise your adventure meetups!" />
+		<property name="welcomeMessageEs"
+			value="Tu sitio para organizar quedadas de aventura" />
+	</bean>
+
+</beans>

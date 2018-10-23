@@ -1,0 +1,72 @@
+/* common.css
+ *
+ * Copyright (C) 2017 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ * 
+ */
+#menu{
+	font-size:20px !important;
+ 	font-family: 'Abel', sans-serif; 
+	list-style: none;
+    width: 35%;
+    text-align: center;
+	display: table;
+	margin: auto;
+	padding: 0px;
+	background-color: #322f32;
+}
+
+#menu li{
+	width:25%;
+	display: table-cell;
+	background-color: #322f32;
+	margin: 0px;
+	display: inline-block;
+}
+
+#menu li a {
+	text-align:center;
+	padding: 10px;
+	display: block;
+	background-color: transparent;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+#menu li a:hover{
+	color:#7CAFB7 ;
+	transition: 0.5s;
+
+}
+
+.error {
+	color: red;
+	font-weight: bolder;
+}
+
+.message {
+	color: red;
+	font-weight: bolder;
+}
+
+body {
+	font-family: 'Abel', sans-serif; 
+	text-align: center; 
+	margin:0px 0px 0px 0px;
+	background-color: #F7F5EF;
+}
+
+#banner{
+	float:left; 
+	width:100%;
+	margin:0px 0px 0px 0px;
+}
+
+#languages{
+	text-align:left; 
+	margin-left:8px;
+}
